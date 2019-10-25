@@ -1,6 +1,6 @@
 <?php
 
-			$url = (isset($_GET['url'])) ? $_GET['url']:'404.php';
+			$url = (isset($_GET['url'])) ? $_GET['url']:'home.php';
 			$url = array_filter(explode('/',$url));
 			
 			$file = $url[0].'.php';

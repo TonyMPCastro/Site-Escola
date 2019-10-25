@@ -32,6 +32,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sobre">Sobre</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="services">Serviços</a>
           </li>
@@ -71,6 +72,9 @@
               <a class="dropdown-item" href="404">404</a>
               <a class="dropdown-item" href="pricing">Pricing Table</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a href="login" class="btn btn-primary">Login</a>
           </li>
         </ul>
       </div>
