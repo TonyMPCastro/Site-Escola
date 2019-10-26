@@ -1,3 +1,8 @@
+<?php
+session_start();
+      unset($_SESSION['seguranca']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,17 +30,38 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+    <form method="POST" action="banco" class="form-signin" >
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-              <label for="inputEmail">Matricula</label>
+              <input type="text" name="id" id="inputMat"  class="form-control" placeholder="Seu usuário" required autofocus>
+               <label>
+                <?php
+            
+            $_SESSION['opc'] = 1;
+         if(isset(      
+           $_SESSION['situacao'])){
+         echo " <label for='inputMat' ><p style='color:red'>Matricula</p></label> ";
+         }else{
+          ?>
+                </label>
+       <label for="inputMat">Matricula</label> 
+       <?php  } ?>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-              <label for="inputPassword">Password</label>
+      <input type="password" name="senha" id="inputPassword"  class="form-control" placeholder="Sua senha" required>
+       <label><?php
+          
+         if(isset(      
+           $_SESSION['situacao'])){
+         echo "<label for='inputPassword'><p style='color:red'>Senha</p></label> ";
+                unset($_SESSION['situacao']);
+         }else{
+          ?>
+                </label>
+       <label for="inputPassword">Senha</label> 
+       <?php  } ?>
             </div>
           </div>
           <div class="form-group">
@@ -46,7 +72,8 @@
               </label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="user">Login</a>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Register an Account</a>
