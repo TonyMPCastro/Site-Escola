@@ -1,25 +1,3 @@
-<?php
- session_start();
-include ('conexao.php');
-
-$idU = isset($_SESSION['idU'])?$_SESSION['idU']:"";
-$usuario = isset($_SESSION['usuario'])?$_SESSION['usuario']:"";
-
-if(isset($_SESSION['seguranca'])){
-     unset($_SESSION['seguranca']);
-     unset($_SESSION['seguranca2']);
-} else {
-    if (isset($_SESSION['seguranca2'])){    
-        unset($_SESSION['seguranca2']);
-    } else {  
-    unset($_SESSION['seguranca2']);
-    header('Location:index.php');  
-            }
-    }
-    if (isset($_SESSION['idU'])){
-        $_SESSION['seguranca2'] = TRUE;
-    }  
-?> 
 
  <!DOCTYPE html>
 <html lang="en">
