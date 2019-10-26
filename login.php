@@ -30,14 +30,12 @@ session_start();
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-    <form method="POST" action="banco" class="form-signin" >
+    <form method="POST" action="banco.php?opc=1" class="form-signin" >
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" name="id" id="inputMat"  class="form-control" placeholder="Seu usuário" required autofocus>
                <label>
                 <?php
-            
-            $_SESSION['opc'] = 1;
          if(isset(      
            $_SESSION['situacao'])){
          echo " <label for='inputMat' ><p style='color:red'>Matricula</p></label> ";

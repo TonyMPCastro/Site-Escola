@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -22,26 +22,24 @@
 
   <?php 
     include('menu.php');
-
     ?>
 
   <!-- Page Content -->
+  <br><br>
   <div class="container">
+ 
 
-    <!-- Page Heading/Breadcrumbs -->
-    <h1 class="mt-4 mb-3">Contact
-      <small>Subheading</small>
-    </h1>
+ <div class="row breadcrumb">
 
-    <ol class="breadcrumb">
+  <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="home">Home</a>
       </li>
       <li class="breadcrumb-item active">Contact</li>
     </ol>
-
-    <!-- Content Row -->
-    <div class="row">
+  </div>
+  <!-- Content Row --> 
+  <div class="row breadcrumb">
       <!-- Map Column -->
       <div class="col-lg-8 mb-4">
         <!-- Embedded Google Map -->
@@ -69,45 +67,55 @@
         </p>
       </div>
     </div>
-    <!-- /.row -->
+      <div class="row breadcrumb">
+        <h3 class="text-center">Envia sua mensagem </h3>
+      </div>
 
-    <!-- Contact Form -->
-    <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <div class="row">
-      <div class="col-lg-8 mb-4">
-        <h3>Send us a Message</h3>
-        <form name="sentMessage" id="contactForm" novalidate>
+      <?php 
+   if (isset($_SESSION['situacao3'])) {  
+        unset($_SESSION['situacao3']);
+                    ?>
+                                <script> 
+                                 alert("OK: Enviado com sucesso!")
+                                </script>
+          <?php }?>
+   
+       
+        <center class="" > 
+        <div class="col-lg-8 mb-4  ">
+        
+        <form method="POST" action="banco.php?opc=4">
           <div class="control-group form-group">
             <div class="controls">
-              <label>Full Name:</label>
-              <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+              <label>Nome:</label>
+              <input type="text" class="form-control" name="nome" id="nome" required data-validation-required-message="Please enter your name.">
               <p class="help-block"></p>
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Phone Number:</label>
-              <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <label>Telefoner:</label>
+              <input type="tel" class="form-control" name="telefone" id="telefone" required data-validation-required-message="Please enter your phone number.">
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Email Address:</label>
-              <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+              <label>Email:</label>
+              <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
             </div>
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Message:</label>
-              <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              <label>Mensagem:</label>
+              <textarea rows="10" cols="100" class="form-control" name="mensagem" id="mensagem" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
             </div>
           </div>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
-        </form>
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Enviar"><br><br>
       </div>
-
+    </form>
+  </center>
     </div>
     <!-- /.row -->
 
@@ -117,7 +125,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0  text-white">Copyright &copy; Your Website 2019</p>
     </div>
     <!-- /.container -->
   </footer>

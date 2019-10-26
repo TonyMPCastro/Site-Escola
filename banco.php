@@ -50,9 +50,6 @@ $nome = isset($_POST["nome"])?$_POST["nome"]:"";
 $cpf = isset($_POST["cpf"])?$_POST["cpf"]:"";
 $dataNas = isset($_POST["dataNas"])?$_POST["dataNas"]:"";
 $telefone = isset($_POST["telefone"])?$_POST["telefone"]:"";
-
-$curso = isset($_POST["curso"])?$_POST["curso"]:"";
-
 $email = isset($_POST["email"])?$_POST["email"]:"";
 $logradouro = isset($_POST["logradouro"])?$_POST["logradouro"]:"";
 $NCasa = isset($_POST["NCasa"])?$_POST["NCasa"]:"";
@@ -60,32 +57,19 @@ $bairro = isset($_POST["bairro"])?$_POST["bairro"]:"";
 $cidade = isset($_POST["cidade"])?$_POST["cidade"]:"";
 $estado = isset($_POST["estado"])?$_POST["estado"]:"";
 $cep = isset($_POST["cep"])?$_POST["cep"]:"";
-
 $senha = isset($_POST["senha"])?$_POST["senha"]:"";
 $senha = anti_injection($senha);
 $cSenha = isset($_POST["cSenha"])?$_POST["cSenha"]:"";
-
-
-$isbn = isset($_POST["isbn"])?$_POST["isbn"]:"";
-$exemplar = isset($_POST["exemplar"])?$_POST["exemplar"]:"";
-$volume = isset($_POST["volume"])?$_POST["volume"]:"";
-$tipo = isset($_POST["tipo"])?$_POST["tipo"]:"";
-$titulo = isset($_POST["titulo"])?$_POST["titulo"]:"";
-$autor = isset($_POST["autor"])?$_POST["autor"]:"";
-$editora = isset($_POST["editora"])?$_POST["editora"]:"";
-$localizacao = isset($_POST["localizacao"])?$_POST["localizacao"]:"";
-$genero = isset($_POST["genero"])?$_POST["genero"]:"";
-$anoP = isset($_POST["anoP"])?$_POST["anoP"]:"";
-
-
+$mensagem = $_POST['mensagem']?$_POST["mensagem"]:"";
+        
     date_default_timezone_set('America/Sao_Paulo');
     $date = date('YmHs');
     
-    $codigo = "$date.$genero.$anoP";
+    $codigo = "$date";
 
 
 
-$opc = $_SESSION['opc'] ;
+$opc = $_GET["opc"]?$_GET["opc"]:"";
 
 
 switch ($opc){
@@ -103,7 +87,7 @@ switch ($opc){
     
     case 3: cadastarUsuario($id,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep);
         break;
-     case 4: sair();
+     case 4: email($email,$mensagem,$nome,$telefone);
         break;
      case 5: excluirUsuario($id2);
         break;
@@ -126,17 +110,7 @@ switch ($opc){
     }
         break;
 
-    case 11: enviarEmail($id2);
-        break;
-    case 12: excluirEmp($id2);
-        break;
-    case 13: cadastrarLivro($codigo,$isbn,$exemplar,$tipo,$titulo,$autor,$editora,$localizacao,$genero,$curso,$anoP,$volume);
-        break;
-    case 14: excluirLivro($id2);
-        break;
-    case 15: cadastrarEmp($id2,$dataNas);
-        break;
-    case 16: pdf();
+    case 11: pdf();
         break;
     
     default:echo 'Opção Incorreta';
@@ -162,36 +136,57 @@ switch ($opc){
         }
 }  
 
-//     function cadastarAdm($id,$nome,$cpf,$senha){
-//        global $conexao;
-//     //======Verificar se já existe cadastrado===============//
-//     $query1 = "Select * from adm where matricula='$id'";
-//     $resultado1 = mysqli_query($conexao,$query1);
-//     $linha = mysqli_num_rows($resultado1);
-// 	if ($linha >=1) {
-// 		$_SESSION['situacao']=true;
-//                 $_SESSION['seguranca'] = true;
-// 		header('Location:cadAdm.php');
-// 	}else{
-// 		//======Comando para cadastrar no banco de dados=========//
-// 		$query = "insert into adm (matricula, nome,cpf, senha,dataHora) VALUES ('$id', '$nome','$cpf', '$senha',NOW())";
-// 		$resultado = mysqli_query($conexao, $query) or die("Erro no cadastro meu chapa!");
-// 		$_SESSION['seguranca']=true;
-//                 $_SESSION['situacao3']=true;
-//                 $_SESSION['aviso']=$id;
-// 		header('Location: cadAdm.php');
-// 	}
-//     }
+
+    function email($email,$mensagem,$nome,$telefone){
+
+        require 'vendor/autoload.php';
+
+        $from = new SendGrid\Email(null, "cethec@ct.com.br");
+        $subject = "Mensagem de contato de $nome";
+        $to = new SendGrid\Email(null, "$email");
+        $content = new SendGrid\Content("text/html", "Olá Cethec, <br><br>Nova mensagem de contato de $nome:<br>Mensagem: $mensagem<br><br>Nome: $nome<br>Email: $email<br>Telefone: $telefone <br>");
+        $mail = new SendGrid\Mail($from, $subject, $to, $content);
+        
+        //Necessário inserir a chave
+        $apiKey = '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';
+        $sg = new \SendGrid($apiKey);
+
+        $response = $sg->client->mail()->send()->post($mail);  
+        $_SESSION['situacao3'] = true;  
+        header('Location: contact');    
+    }
+
     
-//     function cadastarUsuario($id,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep){
-//        global $conexao;
-//     //======Verificar se já existe cadastrado===============//
-//     $query1 = "Select * from usuarios where matricula='$id'";
-//     $resultado1 = mysqli_query($conexao,$query1);
-//     $linha = mysqli_num_rows($resultado1);
-// 	if ($linha >=1) {
-// 		$_SESSION['situacao']=true;
-//                 $_SESSION['seguranca'] = true;
+// //     function cadastarAdm($id,$nome,$cpf,$senha){
+// //        global $conexao;
+// //     //======Verificar se já existe cadastrado===============//
+// //     $query1 = "Select * from adm where matricula='$id'";
+// //     $resultado1 = mysqli_query($conexao,$query1);
+// //     $linha = mysqli_num_rows($resultado1);
+// // 	if ($linha >=1) {
+// // 		$_SESSION['situacao']=true;
+// //                 $_SESSION['seguranca'] = true;
+// // 		header('Location:cadAdm.php');
+// // 	}else{
+// // 		//======Comando para cadastrar no banco de dados=========//
+// // 		$query = "insert into adm (matricula, nome,cpf, senha,dataHora) VALUES ('$id', '$nome','$cpf', '$senha',NOW())";
+// // 		$resultado = mysqli_query($conexao, $query) or die("Erro no cadastro meu chapa!");
+// // 		$_SESSION['seguranca']=true;
+// //                 $_SESSION['situacao3']=true;
+// //                 $_SESSION['aviso']=$id;
+// // 		header('Location: cadAdm.php');
+// // 	}
+// //     }
+    
+// //     function cadastarUsuario($id,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep){
+// //        global $conexao;
+// //     //======Verificar se já existe cadastrado===============//
+// //     $query1 = "Select * from usuarios where matricula='$id'";
+// //     $resultado1 = mysqli_query($conexao,$query1);
+// //     $linha = mysqli_num_rows($resultado1);
+// // 	if ($linha >=1) {
+// // 		$_SESSION['situacao']=true;
+// //                 $_SESSION['seguranca'] = true;
 // 		header('Location:cadUsuario.php');
 // 	}else{
 // 		//======Comando para cadastrar no banco de dados=========//
