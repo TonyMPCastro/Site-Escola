@@ -19,6 +19,14 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+
+  <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
     <!-- js para mascara -->
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>  
     <script type="text/javascript">
@@ -125,6 +133,7 @@
               <label for="inputEmail">Email address</label>
             </div>
           </div>
+
            <div class="form-group">
             <div class="form-label-group">
               <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite  aqui o cpf" required>
@@ -134,6 +143,7 @@
                   </div>
             </div>
           </div>
+          
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
