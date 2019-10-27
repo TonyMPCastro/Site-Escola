@@ -20,14 +20,19 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
-  <!-- Principal JavaScript do Bootstrap
+     <!-- Principal CSS do Bootstrap -->
+    <link href="vendor/boostrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+    <link href="vendor/boostrap/css/sticky-footer-navbar.css" rel="stylesheet">
+        <!-- Principal JavaScript do Bootstrap
     ================================================== -->
     <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- js para mascara -->
+        <!-- js para mascara -->
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>  
     <script type="text/javascript">
     $(document).ready(function(){
@@ -65,131 +70,207 @@
       })
     })
     </script>
-  
+  </head>
+  <!-- Estilos customizados para esse template -->
+    <link href="vendor/bootstrap/css/form-validation.css" rel="stylesheet">
 
-</head>
-
-<body>
-  <?php
+  <body class="d-flex flex-column h-100">
+     <?php
       include('menuUser.php');
  ?>
 
+ <header>
 
+    <!-- Começa o conteúdo da página -->
+    <main role="main" class="flex-shrink-0">
+      <div id="content-wrapper">
 
-  <div class="container-fluid" >
-    <!-- Breadcrumbs-->
+      <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="user">HOME</a>
+            <a href="#">HOME</a>
           </li>
-          <li class="breadcrumb-item active">Cadastro</li>
+          <li class="breadcrumb-item active">Cadastra aluno</li>
         </ol>
+       <div class="container ">
 
-        <?php
-        $_SESSION['situacao'] = false;
-
-                                if(isset($_SESSION['situacao2'])){
+        
+          <div class="row card"><center>
+            <div class="col-md-8 order-md-1">
+              <form method="POST" action="banco.php?opc=3" class="needs-validation" novalidate>
+                         <!-- Começa a parte de cadastro -->            
+                        <div class="py-5 text-center corC">        
+                            <h3>Dados pessoais:</h3>
+                        </div>
+                       <?php
+                                if(isset($_SESSION['situacao'])){
                                   ?>
                                 <script> 
-                                 alert("ERRO: Usuario inexistente!")
+                                 alert("ERRO: Usuario já Cadastrado!")
                                 </script>
           <?php
-                                  unset($_SESSION['situacao2']);
+                                  unset($_SESSION['situacao']);
                                 }
-
-                                if (isset($_SESSION['situacao3'])) {  
-                                   unset($_SESSION['situacao3']);
+                               
                     ?>
-                     <div class="alert alert-success" role="alert">
-                      <h4 class="alert-heading">Well done!</h4>
-                      <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-                      <hr>
-                      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-                    </div>
-          <?php }?>
-    <div class="card card-register mx-auto mt-5">
-      <div class="card-header">Register an Account</div>
-      <div class="card-body">
-        <formmethod="POST" action="banco.php?opc=2" class="needs-validation" novalidate>
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                  <label for="firstName">First name</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                  <label for="lastName">Last name</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-              <label for="inputEmail">Email address</label>
-            </div>
-          </div>
-
-           <div class="form-group">
-            <div class="form-label-group">
-              <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite  aqui o cpf" required>
-              <label for="cpf">CPF</label>
-              <div class="invalid-feedback">
-                          É obrigatório inserir um cpf válido.
+                    <?php
+                                if(isset($_SESSION['situacao3'])){
+                                  ?>
+                                <script> 
+                                 alert("Cadastro do Usuario  <?php echo $_SESSION['aviso'];?> realizado com sucesso!")
+                                </script>
+          <?php
+                                  unset($_SESSION['aviso']);
+                                  unset($_SESSION['situacao3']);
+                                }
+                               
+                    ?>
+                    <div class="row">
+                          <div class="col-md-6 mb-3">
+                                <label for="matricula">Matrícula</label>
+                                <input type="text" name="id" class="form-control" id="matricula" placeholder="Digite  aqui a matricula." value="" required>
+                                <div class="invalid-feedback">
+                                  É obrigatório inserir uma matrícula válida.
+                                </div>
+                          </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite  aqui o cpf." required="" />
+                                <div class="invalid-feedback">
+                                  É obrigatório inserir um cpf válido.
+                                </div>
+                         </div>
                   </div>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">Confirm password</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Salvar</button>
 
-        </form>
-        <div class="text-center">
-          <a class="d-block small mt-3" href="login.html">Login Page</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-        </div>
-      </div>
-    </div>
+                  <div class="mb-3">
+                                <label for="name">Nome</label>
+                                <div class="input-group">
+                                <input type="text" name="nome" class="form-control" id="name" placeholder="Digite  aqui o nome." required>
+                                <div class="invalid-feedback">
+                                    É obrigatório inserir um nome válido.
+                                  </div>
+                                </div>
+                  </div>
+
+                  <div class="row">
+                   <div class="col-md-6 mb-3">
+                            <label for="curso">Curso</label>
+                            <input type="text" name="curso" class="form-control" id="curso" placeholder="Digite  aqui o curso." value="" required>
+                            <div class="invalid-feedback">
+                              É obrigatório inserir uma matrícula válida.
+                            </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                            <label for="dataNas">Data de Nascimento</label>
+                            <input type="text" name="dataNas" class="form-control" id="dataNas" placeholder="DD/MM/AAAA" value="" required>
+                            <div class="invalid-feedback">
+                              É obrigatório inserir uma data de nascimento.
+                            </div>
+                  </div>
+                </div>
+                        
+                <div class="row">
+                <div class="col-md-6 mb-3">
+                            <label for="telefone">Telefone <span class="text-muted">(Opcional)</span></label>
+                            <input type="tel" name="telefone" class="form-control" id="telefone" placeholder="Digite  aqui o telefone." required>
+                             <div class="invalid-feedback">
+                              É obrigatório inserir um telefone.
+                            </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                            <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Digite  aqui o email." required>
+                             <div class="invalid-feedback">
+                              É obrigatório inserir um email.
+                            </div>
+               </div>
+              </div>
+                         <br>
+                         <br>
+        <div class="py-5 text-center corC">
+           <h3>Endereço:</h3>
+         </div>
+                         <br>
+                         <br>
+              <div class="mb-3">
+                          <label for="logradouro">Logradouro</label>
+                          <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Digite  aqui o logradouro." required>
+                          <div class="invalid-feedback">
+                            Por favor, insira seu endereço.
+                          </div>
+              </div>
+              <div class="row">
+                <div class="col-9 mb-3">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" name="bairro" class="form-control" id="matricula" placeholder="Digite  aqui o bairro." value="" required>
+                            <div class="invalid-feedback">
+                              É obrigatório inserir uma bairro válida.
+                            </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                            <label for="nCasa">Número</label>
+                            <input type="text" name="NCasa" class="form-control" id="nCasa" placeholder="Numero da casa" required>
+                </div>
+             </div>
+
+            <div class="row">
+                 <div class="col-md-4 mb-3">
+                            <label for="estado">Estado</label>
+                            <select name="estado" class="custom-select d-block w-100" id="estado" required>
+                              <option>Escolha o estado...</option>
+                              <option value="Maranhão">Maranhão</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Por favor, insira um estado válido.
+                            </div>
+              </div>
+              <div class="col-md-5 mb-3">
+                            <label for="cidade">Cidade</label>
+                            <select name="cidade" class="custom-select d-block w-100" id="cidade" required>
+                              <option>Escolha a cidade...</option>
+                              <option value="Viana">Viana</option>
+                              <option value="Matinha">Matinha</option>
+                              <option value="Cajari">Cajari</option>
+                              <option value="Penalva">Penalva</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Por favor, escolha uma cidade válida.
+                            </div>
+              </div>
+           
+             <div class="col-md-3 mb-3">
+                            <label for="cep">CEP</label>
+                            <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite  aqui o cep." required>
+                            <div class="invalid-feedback">
+                              É obrigatório inserir um CEP.
+                            </div>
+             </div>
+          </div>
+
+                        <hr class="mb-4">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Salvar</button>
+                        <br>
+                        <br>
+              </form>
+            </div></center>
+          </div>
+    </div>  
   </div>
+</div>
 
- <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Page level plugin JavaScript-->
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin.min.js"></script>
-
-  <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-
-
-<script>
+ </header>
+   <footer id="nav-link" class="footer mt-auto py-3">
+     
+      <div id="nav-link" class="container">
+          <center> <span  class="text-muted">&copy 2019. Todos os direitos reservados.</span></center>
+      </div>
+         
+    </footer>
+    </main>
+    
+        <script>
       // Exemplo de JavaScript para desativar o envio do formulário, se tiver algum campo inválido.
       (function() {
         'use strict';
@@ -212,5 +293,3 @@
       })();
     </script>
   </body>
-
-</html>

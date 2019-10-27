@@ -1,0 +1,14 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
+a#nav-link.nav-link.dropdown-toggle::after{
+    background: #343a40;
+}
+
+#panel panel-primary{
+    background: red;
+}
+

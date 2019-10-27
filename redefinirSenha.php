@@ -20,15 +20,6 @@
 </head>
 
 <body class="bg-dark">
-    <?php 
-    session_start();
-   if (isset($_SESSION['situacao3'])) {  
-        unset($_SESSION['situacao3']);
-                    ?>
-                                <script> 
-                                 alert("OK: Enviado com sucesso!")
-                                </script>
-          <?php }?>
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">

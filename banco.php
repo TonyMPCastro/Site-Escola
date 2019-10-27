@@ -43,7 +43,7 @@ function anti_injection($sql)
     }
 
 
-$id = isset($_POST["id"])?$_POST["id"]:"";
+$id = isset($_POST["matricula"])?$_POST["matricula"]:"";
 $id = anti_injection($id);
 $id2 = isset($_POST["btn"])?$_POST["btn"]:"";
 $nome = isset($_POST["nome"])?$_POST["nome"]:"";
@@ -60,6 +60,7 @@ $cep = isset($_POST["cep"])?$_POST["cep"]:"";
 $senha = isset($_POST["senha"])?$_POST["senha"]:"";
 $senha = anti_injection($senha);
 $cSenha = isset($_POST["cSenha"])?$_POST["cSenha"]:"";
+$cSenha = anti_injection($cSenha);
 $mensagem = isset($_POST["mensagem"])?$_POST["mensagem"]:"";
         
     date_default_timezone_set('America/Sao_Paulo');
@@ -102,12 +103,10 @@ switch ($opc){
         break;
      case 10: 
      if($senha == $cSenha){
-        editarAdm($id,$id2,$nome,$cpf,$senha);
+        redefSenha($senha);
     }else{
-        $_SESSION['situacaoS']=true;
-        $_SESSION['seguranca'] = true;
-        $_SESSION['edt'] = false;
-        header('Location:editarAdms.php');
+        $_SESSION['situacao3'] = true;
+        header('Location: redSenha');
     }
         break;
 
@@ -128,15 +127,24 @@ switch ($opc){
              $_SESSION['seguranca'] = true;
              
              $_SESSION['idU'] = $usuario['matricula'];
+             $idU = $usuario['cpf'];
+             $senhaB = $usuario['senha'];
              $_SESSION['usuario'] = $usuario['nome'];
              $tipo = $usuario['tipo'];
+            $_SESSION['cpf'] = $usuario['cpf'];
 
-             if ($tipo == 1) {
+          
+
+             if ($idU == $senha) {
+                header('Location: redSenha');
+             }elseif ($tipo == 1) {
+               
+                $_SESSION['seguranca2'] = true; 
                 header('Location: user');
-                $_SESSION['seguranca2'] = true;
              }else{
-                 header('Location: userAluno');
-                $_SESSION['seguranca3'] = true;
+                
+                $_SESSION['seguranca3'] = true; 
+                header('Location: userAluno');
 
              }
              
@@ -181,40 +189,62 @@ switch ($opc){
              $email = $usuario['email'];
 
         if($linha == 1){
-
-        $query1 = "update adm set senha='$idU' where cpf='$cpf'";
+        $query1 = "update adm set senha='$cpf' where cpf='$cpf'";
         $resultado = mysqli_query($conexao, $query1) or die("Erro !");
 
-                ini_set('display_errors', 1);
-
-        error_reporting(E_ALL);
-
-        $from = "testing@yourdomain";
-
-        $to = "$email";
-
-        $subject = "Verificando o correio do PHP";
-
-        $message = "O correio do PHP funciona bem";
-
-        $headers = "De:". $from;
-
-        mail($to, $subject, $message, $headers);
-
-        // $from = new SendGrid\Email(null, "cethec@ct.com.br");
-        // $subject = "Redefinir Senha";
-        // $to = new SendGrid\Email(null, "$email");
-        // $content = new SendGrid\Content("text/html", "Olá $usuario1, <br><br>Novos dados:<br>Usuario: $cpf<br><br>Senha: $idU<br>http://localhost/Site-Escola/login");
-        // $mail = new SendGrid\Mail($from, $subject, $to, $content);
+        $from = new SendGrid\Email(null, "cethec@ct.com.br");
+        $subject = "Redefinir Senha";
+        $to = new SendGrid\Email(null, "$email");
+        $content = new SendGrid\Content("text/html", "Olá $usuario1, <br><br>Novos dados:<br>Usuario: $idU<br>Senha: $cpf<br>");
+        $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
-        // //Necessário inserir a chave
-        // $apiKey = '';
-        // $sg = new \SendGrid($apiKey);
+        //Necessário inserir a chave
+        $apiKey = '';
+        $sg = new \SendGrid($apiKey);
 
-        // $response = $sg->client->mail()->send()->post($mail);   
-        // unset($_SESSION['seguranca']);
+        $response = $sg->client->mail()->send()->post($mail);   
+        unset($_SESSION['seguranca']);
         $_SESSION['situacao3'] = true;  
-        header('Location: redefinirSenha'); 
+        header('Location: login'); 
+
+        }  
+    }
+
+     function redefSenha($senha){
+            global $conexao;
+        require 'vendor/autoload.php';
+
+        $cpf = isset($_SESSION['cpf'])?$_SESSION['cpf']:"";
+
+        echo "$cpf";
+
+        $query = "select * from adm where cpf='$cpf'";
+        $resultado = mysqli_query($conexao, $query) or die("Erro de Login");
+        $usuario = mysqli_fetch_array($resultado);
+        $linha = mysqli_num_rows($resultado);
+             $idU = $usuario['matricula'];
+             $usuario1 = $usuario['nome'];
+             $email = $usuario['email'];
+
+             if($linha == 1){
+
+        $query1 = "update adm set senha='$senha' where cpf='$cpf'";
+        $resultado = mysqli_query($conexao, $query1) or die("Erro !");
+
+        $from = new SendGrid\Email(null, "cethec@ct.com.br");
+        $subject = "Senha redefinida";
+        $to = new SendGrid\Email(null, "$email");
+        $content = new SendGrid\Content("text/html", "Olá $usuario1, <br><br>Novos dados:<br>Usuario: $idU<br>Senha: $senha<br>http://localhost/Site-Escola/login");
+        $mail = new SendGrid\Mail($from, $subject, $to, $content);
+        
+        //Necessário inserir a chave
+        $apiKey = '';
+        $sg = new \SendGrid($apiKey);
+
+        $response = $sg->client->mail()->send()->post($mail);   
+        unset($_SESSION['seguranca']);
+        $_SESSION['situacao3'] = true;  
+        header('Location: login'); 
 
         }  
     }
