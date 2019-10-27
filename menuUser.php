@@ -20,7 +20,23 @@ if(isset($_SESSION['seguranca'])){
         $_SESSION['seguranca2'] = TRUE;
     }  
 ?> 
+<style type="text/css">
 
+  .circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+</style>
  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="user">ADM</a>
@@ -44,7 +60,7 @@ if(isset($_SESSION['seguranca'])){
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="modal" data-target="#logoutModal2" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="badge badge-danger">11</span>
           <i class="fas fa-bell fa-fw"></i>
           
@@ -64,16 +80,18 @@ if(isset($_SESSION['seguranca'])){
       </li> -->
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-          
+          <i class="fas fa-user-circle fa-fw"></i> 
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <center><a class="dropdown-item" href="#"><img width="50px" height="50px" src="img/logo.png"></a>
-          <a class="dropdown-item" href="#"><center><?php echo"$idU";?> <br> <?php echo"$usuario";?></center></a>
+          <a class="dropdown-item" href="#">
+            <div class="circle rounded mx-auto d-block">
+             <img src="https://i.stack.imgur.com/atUuf.png">
+            </div></a>
+          <center><a class="dropdown-item" href="#"><center><?php echo"$idU";?> <br> <?php echo"$usuario";?></center></a>
           <a class="dropdown-item" href="#">Settings</a>
           <a class="dropdown-item" href="#">Activity Log</a>
           <div class="dropdown-divider"></div>
-          <a class="btn btn-danger dropdown-toggle" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></center>
+          <a class="btn btn-danger dropdown-toggle" href="banco.php?opc=0">Logout</a></center>
         </div>
       </li>
     </ul>
@@ -87,7 +105,7 @@ if(isset($_SESSION['seguranca'])){
       <li class="nav-item active">
         <a class="nav-link" href="user">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -119,3 +137,20 @@ if(isset($_SESSION['seguranca'])){
     </ul>
 
     <div id="content-wrapper">
+
+  <div class="modal fade" id="logoutModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Notificações</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Aqui vai as notificações</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>

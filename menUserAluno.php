@@ -7,28 +7,46 @@ $usuario = isset($_SESSION['usuario'])?$_SESSION['usuario']:"";
 
 if(isset($_SESSION['seguranca'])){
      unset($_SESSION['seguranca']);
-     unset($_SESSION['seguranca2']);
+     unset($_SESSION['seguranca3']);
 } else {
-    if (isset($_SESSION['seguranca2'])){    
-        unset($_SESSION['seguranca2']);
+    if (isset($_SESSION['seguranca3'])){    
+        unset($_SESSION['seguranca3']);
     } else {  
-    unset($_SESSION['seguranca2']);
+    unset($_SESSION['seguranca3']);
     header('Location:login');  
             }
     }
     if (isset($_SESSION['idU'])){
-        $_SESSION['seguranca2'] = TRUE;
+        $_SESSION['seguranca3'] = TRUE;
     }  
 ?> 
+<style type="text/css">
+
+  .circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  position: relative;
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+</style>
 
  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-    <a class="navbar-brand mr-1" href="user">Aluno</a>
-
+  
+  <div class="input-group">
+    <a class="navbar-brand mr-1" href="userAluno">Aluno</a> <br><br>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
-
+    
+  </div>
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       <div class="input-group">
@@ -67,12 +85,15 @@ if(isset($_SESSION['seguranca'])){
           <i class="fas fa-user-circle fa-fw"></i> 
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <center><a class="dropdown-item" href="#"><img width="50px" height="50px" src="img/logo.png"></a>
-          <a class="dropdown-item" href="#"><center><?php echo"$idU";?> <br> <?php echo"$usuario";?></center></a>
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
+          
+          <a class="dropdown-item" href="#">
+            <div class="circle rounded mx-auto d-block">
+             <img src="https://i.stack.imgur.com/atUuf.png">
+            </div>
+          </a>
+         <center> <a class="dropdown-item" href="#"><center><?php echo"$idU";?> <br> <?php echo"$usuario";?></center></a>
           <div class="dropdown-divider"></div>
-          <a class="btn btn-danger dropdown-toggle" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></center>
+          <a class="btn btn-danger dropdown-toggle" href="#" data-toggle="modal" data-target="#logoutModal">SAIR</a></center>
         </div>
       </li>
     </ul>
@@ -83,16 +104,17 @@ if(isset($_SESSION['seguranca'])){
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
+    
       <li class="nav-item active">
-        <a class="nav-link" href="user">
+        <a class="nav-link" href="userAluno">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Declarações</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Login Screens:</h6>
@@ -117,7 +139,6 @@ if(isset($_SESSION['seguranca'])){
       </li>
     </ul>
 
-    <div id="content-wrapper">
 
       <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

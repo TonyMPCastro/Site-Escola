@@ -73,6 +73,8 @@ $opc = $_GET["opc"]?$_GET["opc"]:"";
 
 
 switch ($opc){
+    case 0: sair();
+        break;
     case 1: logar($id, $senha);
         break;
     case 2: 
@@ -125,10 +127,20 @@ switch ($opc){
         $linha = mysqli_num_rows($resultado);
         if($linha == 1){
              $_SESSION['seguranca'] = true;
-             $_SESSION['seguranca2'] = true;
+             
              $_SESSION['idU'] = $usuario['matricula'];
              $_SESSION['usuario'] = $usuario['nome'];
-            header('Location: user'); 
+             $tipo = $usuario['tipo'];
+
+             if ($tipo == 1) {
+                header('Location: user');
+                $_SESSION['seguranca2'] = true;
+             }else{
+                 header('Location: userAluno');
+                $_SESSION['seguranca3'] = true;
+
+             }
+             
             
         } else {
             $_SESSION['situacao'] = true;
@@ -199,11 +211,10 @@ switch ($opc){
 // 	}
 //     }
     
-//     function sair(){
-//         session_start();
-//         session_destroy();
-//         header('Location:index.php');
-//     }
+    function sair(){
+        session_destroy();
+        header('Location: login');
+    }
 
 
 //     function excluirUsuario($id) {

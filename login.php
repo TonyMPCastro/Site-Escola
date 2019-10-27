@@ -1,6 +1,8 @@
 <?php
 session_start();
       unset($_SESSION['seguranca']);
+      unset($_SESSION['seguranca2']);
+      unset($_SESSION['seguranca3']);
 ?>
 
 <!DOCTYPE html>
