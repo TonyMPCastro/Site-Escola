@@ -60,7 +60,7 @@ $cep = isset($_POST["cep"])?$_POST["cep"]:"";
 $senha = isset($_POST["senha"])?$_POST["senha"]:"";
 $senha = anti_injection($senha);
 $cSenha = isset($_POST["cSenha"])?$_POST["cSenha"]:"";
-$mensagem = $_POST['mensagem']?$_POST["mensagem"]:"";
+$mensagem = isset($_POST["mensagem"])?$_POST["mensagem"]:"";
         
     date_default_timezone_set('America/Sao_Paulo');
     $date = date('YmHs');
@@ -70,7 +70,6 @@ $mensagem = $_POST['mensagem']?$_POST["mensagem"]:"";
 
 
 $opc = $_GET["opc"]?$_GET["opc"]:"";
-
 
 switch ($opc){
     case 0: sair();
@@ -87,7 +86,7 @@ switch ($opc){
     }
         break;
     
-    case 3: cadastarUsuario($id,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep);
+    case 3: RedSenha($cpf);
         break;
      case 4: email($email,$mensagem,$nome,$telefone);
         break;
@@ -97,7 +96,7 @@ switch ($opc){
         break;
      case 7: editarUsuario($id,$id2,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep);
         break;
-     case 8: BuscarA($id2);
+     case 8: BuscarA($id2);cadastarUsuario($id,$nome,$cpf,$dataNas,$curso,$telefone,$email,$logradouro,$bairro,$NCasa,$cidade,$estado,$cep);
         break;
      case 9: excluirAdms($id2);
         break;
@@ -160,12 +159,64 @@ switch ($opc){
         $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
         //Necessário inserir a chave
-        $apiKey = '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';
+        $apiKey = 'c';
         $sg = new \SendGrid($apiKey);
 
         $response = $sg->client->mail()->send()->post($mail);  
         $_SESSION['situacao3'] = true;  
         header('Location: contact');    
+    }
+
+    function RedSenha($cpf){
+            global $conexao;
+        require 'vendor/autoload.php';
+
+
+        $query = "select * from adm where cpf='$cpf'";
+        $resultado = mysqli_query($conexao, $query) or die("Erro de Login");
+        $usuario = mysqli_fetch_array($resultado);
+        $linha = mysqli_num_rows($resultado);
+             $idU = $usuario['matricula'];
+             $usuario1 = $usuario['nome'];
+             $email = $usuario['email'];
+
+        if($linha == 1){
+
+        $query1 = "update adm set senha='$idU' where cpf='$cpf'";
+        $resultado = mysqli_query($conexao, $query1) or die("Erro !");
+
+                ini_set('display_errors', 1);
+
+        error_reporting(E_ALL);
+
+        $from = "testing@yourdomain";
+
+        $to = "$email";
+
+        $subject = "Verificando o correio do PHP";
+
+        $message = "O correio do PHP funciona bem";
+
+        $headers = "De:". $from;
+
+        mail($to, $subject, $message, $headers);
+
+        // $from = new SendGrid\Email(null, "cethec@ct.com.br");
+        // $subject = "Redefinir Senha";
+        // $to = new SendGrid\Email(null, "$email");
+        // $content = new SendGrid\Content("text/html", "Olá $usuario1, <br><br>Novos dados:<br>Usuario: $cpf<br><br>Senha: $idU<br>http://localhost/Site-Escola/login");
+        // $mail = new SendGrid\Mail($from, $subject, $to, $content);
+        
+        // //Necessário inserir a chave
+        // $apiKey = '';
+        // $sg = new \SendGrid($apiKey);
+
+        // $response = $sg->client->mail()->send()->post($mail);   
+        // unset($_SESSION['seguranca']);
+        $_SESSION['situacao3'] = true;  
+        header('Location: redefinirSenha'); 
+
+        }  
     }
 
     

@@ -16,7 +16,7 @@ session_start();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Login</title>
+  <title>Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@ session_start();
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
+     <center> <div class="card-header">Login</div></center>
       <div class="card-body">
     <form method="POST" action="banco.php?opc=1" class="form-signin" >
           <div class="form-group">
@@ -68,16 +68,16 @@ session_start();
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="remember-me">
-                Remember Password
+                Lembrar Senha
               </label>
             </div>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
 
         </form>
+        <br>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Register an Account</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <a class="d-block small" href="redefinirSenha">Esqueceu sua senha?</a>
         </div>
       </div>
     </div>
