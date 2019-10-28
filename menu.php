@@ -77,7 +77,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="login" class="btn btn-primary">Login</a>
+            <a href="login" class="btn btn-primary" target="_blank">Login</a>
           </li>
         </ul>
       </div>

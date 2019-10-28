@@ -8,7 +8,6 @@
 			if(is_file($file)){
 				include $file;
 			}else{
-				include '404.php';
+				header('Location: 404');
 			}
-
 ?>
