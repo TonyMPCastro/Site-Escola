@@ -168,7 +168,17 @@ if(isset($_SESSION['seguranca'])){
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Aqui vai as notificações</div>
+        <div class="modal-body"><div class="module filtered" id="changelist"><form id="changelist-form" action="" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="wI7h1scniyWZs3KZl3ZOZW8VwtClm4wLbiglWILqOgykaWQt40CFX0kzCDRKJNnN"><div class="pagination"><ul><li class="next disabled"><a style="cursor: default; color: #666">
+                    Mostrando 1 
+                    
+                        Mensagem Recebida
+                    
+                </a></li></ul></div><div class="actions"><label>Ação: <select name="action" required=""><option value="" selected="">---------</option><option value="marcar_como_lida">Marcar como lida</option><option value="enviar_para_lixeira">Enviar para lixeira</option></select></label><input type="hidden" name="select_across" value="0" class="select-across"><button type="submit" class="button" title="Execute a ação selecionada" name="index" value="0">Aplicar</button><span class="action-counter" data-actions-icnt="1">0 de 1 selecionados</span></div><div class="results"><table id="result_list"><thead><tr><th scope="col" class="action-checkbox-column"><div class="text"><span><input type="checkbox" id="action-toggle"></span></div><div class="clear"></div></th><th scope="col" class="column-get_icone"><div class="text"><span>Ações</span></div><div class="clear"></div></th><th scope="col" class="sortable column-remetente"><div class="text"><a href="?o=2.-4&amp;tab=tab_nao_lidas">Remetente</a></div><div class="clear"></div></th><th scope="col" class="sortable column-assunto"><div class="text"><a href="?o=3.-4&amp;tab=tab_nao_lidas">Assunto</a></div><div class="clear"></div></th><th scope="col" class="sortable column-data_envio sorted descending"><div class="sortoptions"><a class="sortremove" href="?o=&amp;tab=tab_nao_lidas" title="Remover da ordenação"></a><a href="?o=4&amp;tab=tab_nao_lidas" class="toggle descending" title="Alternar ordenção"></a></div><div class="text"><a href="?o=4&amp;tab=tab_nao_lidas">Data envio</a></div><div class="clear"></div></th></tr></thead><tbody><tr class="row1"><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="3194" class="action-select"></td><th class="field-get_icone"><a href="/admin/edu/mensagementrada/3194/change/?_changelist_filters=tab%3Dtab_nao_lidas"></a><a href="/edu/mensagem/3194/" class="icon icon-view " title="Visualizar"><span class="sr-only">Visualizar</span></a></th><td class="field-remetente nowrap">Anderson Gedeon (1645439)</td><td class="field-assunto">BOLETIM DE SERVIÇO INTERNO - BSI 312019</td><td class="field-data_envio nowrap">11/10/2019 14:16</td></tr></tbody></table></div><div class="pagination"><ul><li class="next disabled"><a style="cursor: default; color: #666">
+                    Mostrando 1 
+                    
+                        Mensagem Recebida
+                    
+                </a></li></ul></div></form></div></div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Sair</button>
         </div>
