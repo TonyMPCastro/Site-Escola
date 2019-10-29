@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,20 +12,6 @@
 
  <title>SB Admin - register</title>
 
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-
-     <!-- Principal CSS do Bootstrap -->
-    <link href="vendor/boostrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Estilos customizados para esse template -->
-    <link href="vendor/boostrap/css/sticky-footer-navbar.css" rel="stylesheet">
         <!-- Principal JavaScript do Bootstrap
     ================================================== -->
     <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>
@@ -57,7 +44,7 @@
         }
       }
             
-      $("#matricula").mask("00000AAA.AAA0000", options)
+      $("#matricula").mask("00000000.000000", options)
       
       $("#celular").mask("(00) 0000-00009")
       
@@ -98,12 +85,13 @@
 
         
           <div class="row card"><center>
-            <div class="col-md-8 order-md-1">
+            <div class="breadcrumb">        
+                    <h3>Dados pessoais:</h3>
+            </div>
+            <div class="col-md-8" style=" ">
               <form method="POST" action="banco.php?opc=3" class="needs-validation" novalidate>
                          <!-- Começa a parte de cadastro -->            
-                        <div class="py-5 text-center corC">        
-                            <h3>Dados pessoais:</h3>
-                        </div>
+                        
                        <?php
                                 if(isset($_SESSION['situacao'])){
                                   ?>
@@ -130,10 +118,7 @@
                     <div class="row">
                           <div class="col-md-6 mb-3">
                                 <label for="matricula">Matrícula</label>
-                                <input type="text" name="id" class="form-control" id="matricula" placeholder="Digite  aqui a matricula." value="" required>
-                                <div class="invalid-feedback">
-                                  É obrigatório inserir uma matrícula válida.
-                                </div>
+                                <input type="text" name="id" class="form-control" id="matricula" readonly="readonly" value="">
                           </div>
                              <div class="col-md-6 mb-3">
                                 <label for="cpf">CPF</label>
@@ -269,7 +254,8 @@
          
     </footer>
     </main>
-    
+</header>
+        
         <script>
       // Exemplo de JavaScript para desativar o envio do formulário, se tiver algum campo inválido.
       (function() {
@@ -292,4 +278,5 @@
         }, false);
       })();
     </script>
-  </body>
+  
+</body></html>

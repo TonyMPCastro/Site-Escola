@@ -24,12 +24,6 @@ session_start();
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
-   
-     <!-- Principal CSS do Bootstrap -->
-    <link href="vendor/boostrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Estilos customizados para esse template -->
-    <link href="vendor/boostrap/css/sticky-footer-navbar.css" rel="stylesheet">
         <!-- Principal JavaScript do Bootstrap
     ================================================== -->
     <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>
@@ -37,7 +31,7 @@ session_start();
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-        <!-- js para mascara -->
+         <!-- js para mascara -->
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>  
     <script type="text/javascript">
     $(document).ready(function(){
