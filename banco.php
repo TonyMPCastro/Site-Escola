@@ -167,7 +167,7 @@ switch ($opc){
         $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
         //Necessário inserir a chave
-        $apiKey = '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';
+        $apiKey = '';
         $sg = new \SendGrid($apiKey);
 
         $response = $sg->client->mail()->send()->post($mail);  
@@ -199,8 +199,7 @@ switch ($opc){
         $mail = new SendGrid\Mail($from, $subject, $to, $content);
         
         //Necessário inserir a chave
-        $apiKey = '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
-';
+        $apiKey = '';
         $sg = new \SendGrid($apiKey);
 
         $response = $sg->client->mail()->send()->post($mail);   
