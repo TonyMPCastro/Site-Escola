@@ -119,22 +119,38 @@ if(isset($_SESSION['seguranca'])){
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="user">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-home"></i>
           <span>Home</span>
         </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Cadastrar</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login">Login</a>
-          <a class="dropdown-item" href="register">Register</a>
+          <h6 class="dropdown-header">Cadastrar:</h6>
+          <a class="dropdown-item" href="register">Aluno</a>
+          <a class="dropdown-item" href="register">Professor</a>
+          <a class="dropdown-item" href="forgot-password">Direção</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>teste</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Cadastrar:</h6>
+          <a class="dropdown-item" href="register">Cadastrar</a>
           <a class="dropdown-item" href="forgot-password">Forgot Password</a>
           <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
+          <h6 class="dropdown-header">Professores:</h6>
+          <a class="dropdown-item" href="404">404 Page</a>
+          <a class="dropdown-item" href="blank">Blank Page</a> 
+           <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">Outros:</h6>
           <a class="dropdown-item" href="404">404 Page</a>
           <a class="dropdown-item" href="blank">Blank Page</a>
         </div>
