@@ -13,13 +13,10 @@
 
 </head>
 
-<body id="page-top">
-
- <?php
+<body>
+      <?php
       include('menUserAluno.php');
  ?>
-
-     
     <div id="content-wrapper">
 
       <div class="container-fluid">

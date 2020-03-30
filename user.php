@@ -13,12 +13,12 @@
 
 </head>
 
-<body id="page-top">
 
+
+<body>
  <?php
       include('menuUser.php');
  ?>
-
       <div class="container-fluid">
         <!-- Icon Cards-->
         <div class="row">

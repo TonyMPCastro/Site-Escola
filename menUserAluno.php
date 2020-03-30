@@ -60,9 +60,6 @@ if(isset($_SESSION['seguranca'])){
 
 </head>
 
-<body>
-
-
 
  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
   
@@ -209,6 +206,6 @@ if(isset($_SESSION['seguranca'])){
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
 
-</body>
+
 
 </html>

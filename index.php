@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
   <?php
 
       $url = (isset($_GET['url'])) ? $_GET['url']:'home.php';
@@ -30,7 +31,7 @@
       if(is_file($file)){
         include $file;
       }else{
-        header('Location: 404');
+        header('Location: home');
       }
 ?>
 
