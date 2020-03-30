@@ -59,7 +59,7 @@ if(isset($_SESSION['seguranca'])){
 
 </head>
 
-<body id="page-top">
+<body>
 
  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 

@@ -1,6 +1,6 @@
 
  <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <?php
@@ -26,7 +26,7 @@
  <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-    <a href="index"><img  class="navbar-brand" width="130px" height="50px"  src="img/logo.png"></a>
+    <a href="home"><img  class="navbar-brand" width="130px" height="50px"  src="img/logo.png"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
