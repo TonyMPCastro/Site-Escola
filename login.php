@@ -3,6 +3,7 @@ session_start();
       unset($_SESSION['seguranca']);
       unset($_SESSION['seguranca2']);
       unset($_SESSION['seguranca3']);
+      unset($_SESSION['segurancaRedf']);
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +74,69 @@ session_start();
   <!-- Estilos customizados para esse template -->
     <link href="vendor/bootstrap/css/form-validation.css" rel="stylesheet">
 
-<body class="bg-dark">
+  <body> 
+ <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+    <a href="home"><img  class="navbar-brand" width="130px" height="50px"  src="img/logo.png"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="sobre">Sobre</a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="services">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact">Contato</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Portfolio
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" href="portfolio-1-col">1 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-2-col">2 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-3-col">3 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-4-col">4 Column Portfolio</a>
+              <a class="dropdown-item" href="portfolio-item">Single Portfolio Item</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Blog
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="blog-home-1">Blog Home 1</a>
+              <a class="dropdown-item" href="blog-home-2">Blog Home 2</a>
+              <a class="dropdown-item" href="blog-post">Blog Post</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other Pages
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="full-width">Full Width Page</a>
+              <a class="dropdown-item" href="sidebar">Sidebar Page</a>
+              <a class="dropdown-item" href="faq">FAQ</a>
+              <a class="dropdown-item" href="404">404</a>
+              <a class="dropdown-item" href="pricing">Pricing Table</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="login" class="btn btn-primary">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br><br><br><br><br><br>
+  
   <?php 
  
    if (isset($_SESSION['situacao3'])) {  
@@ -86,8 +148,8 @@ session_start();
           <?php }?>
 
   <div class="container">
-    <div class="card card-login mx-auto mt-5">
-     <center> <div class="card-header">Login</div></center>
+    <div class="card card-login mx-auto mt-5 bg-dark">
+     <center> <div class="card-header" style='color:white'>Login</div></center>
       <div class="card-body">
     <form method="POST" action="banco.php?opc=1" class="form-signin" >
           <div class="form-group">
@@ -123,8 +185,8 @@ session_start();
           </div>
           <div class="form-group">
             <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me">
+              <label style='color:white'>
+                <input type="checkbox"  value="remember-me" >
                 Lembrar Senha
               </label>
             </div>
@@ -168,6 +230,10 @@ session_start();
         }, false);
       })();
     </script>
+      <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -136,16 +136,21 @@ switch ($opc){
           
 
              if ($idU == $senha) {
+                 $_SESSION['segurancaRedf'] = true;
                 header('Location: redSenha');
              }elseif ($tipo == 1) {
                
                 $_SESSION['seguranca2'] = true; 
                 header('Location: user');
-             }else{
+             }elseif($tipo == 2){
                 
                 $_SESSION['seguranca3'] = true; 
                 header('Location: userAluno');
 
+             }else{
+
+                $_SESSION['seguranca4'] = true; 
+                header('Location: userProf');
              }
              
             
@@ -315,13 +320,6 @@ switch ($opc){
 //     }
 
 
-//      function excluirEmp($id) {
-//         global $conexao;
-//          $_SESSION['seguranca'] = true;
-//     $query = "update emprestimoslivro set estadoCad='1',dataHoraEnt=NOW() where id='$id'";
-//     $resultado = mysqli_query($conexao, $query);
-//     header('Location: empEmAndamento.php'); 
-//     }
     
 //     function BuscarU($id2){
 //          global $conexao;
@@ -453,35 +451,6 @@ switch ($opc){
 // }
 
 
-//     function  excluirLivro($id2){
-//          global $conexao;
-//          $_SESSION['seguranca'] = true;
-//     $query = "delete from livros where id='$id2'";
-//     $resultado = mysqli_query($conexao, $query);
-//     header('Location: livros.php');
-// }
-
-//     function cadastrarEmp($id2,$dataNas){
-//         global $conexao;
-//         $idEmp = $_SESSION['idEmp'];
-//         $codigoEmp = $_SESSION['codigoEmp'];
-//         $query1 = "select * from emprestimoslivro where idUsuario='$idEmp' and idLivro='$codigoEmp' and dataHoraEnt='0000-00-00' and estadoCad='0' ";
-//             $resultado1 = mysqli_query($conexao,$query1);
-//             $linha = mysqli_num_rows($resultado1);
-//             if ($linha >=1) {
-//                      $_SESSION['situacaoF']=true;
-//                     header('Location: empEmAndamento.php');
-//                }else{
-//         $query2 = "insert into emprestimoslivro(idUsuario,idAdm,idLivro,dataHora,dataHoraDev,estadoCad) VALUES ('$idEmp','$id2','$codigoEmp',NOW(),'$dataNas','0')";
-//     $resultado = mysqli_query($conexao, $query2);
-       
-//      $_SESSION['situacaoS']=true;
-//       header('Location: empEmAndamento.php');
-//   }
-//     }
-//  function pdf(){
-//     header('Location: empPdf.php');
-// }
         ?>
  
     

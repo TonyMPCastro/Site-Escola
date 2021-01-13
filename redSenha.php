@@ -1,3 +1,13 @@
+<?php
+ session_start();
+
+if(isset($_SESSION['segurancaRedf'])){
+    
+} else {
+  header('Location:login'); 
+    }  
+?>   
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -1,5 +1,5 @@
 
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Modern Business - Start Bootstrap Template</title>
+  <title>Escola.com</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,8 @@
     include('menu.php');
 
     ?>
-  <header>
+
+  <header> <br><br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -71,9 +72,9 @@
   <!-- Page Content -->
   <div class="container">
 
-    <h1 class="my-4">Welcome to Modern Business</h1>
+    <h1 class="my-4">Noticias: </h1>
 
-    <!-- Marketing Icons Section -->
+    <!-- Marketing Icons Section >
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
@@ -109,10 +110,10 @@
         </div>
       </div>
     </div>
-    <!-- /.row -->
+    <!- /.row -->
 
-    <!-- Portfolio Section -->
-    <h2>Portfolio Heading</h2>
+    <!-- Portfolio Section 
+    <h2>Portfolio Heading</h2>-->
 
     <div class="row">
       <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -223,8 +224,8 @@
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    <div class="container my-auto">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
     </div>
     <!-- /.container -->
   </footer>
