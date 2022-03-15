@@ -1,240 +1,663 @@
-
-  <!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
 
 <head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>Joson</title>
 
-  <title>Escola.com</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/modern-business.css" rel="stylesheet">
-
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <h3>
+              Joson
+            </h3>
+            <span> college</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-<?php 
-    include('menu.php');
-
-    ?>
-
-  <header> <br><br>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-      <!-- imagem do tamanho 1900X1080 -->
-
-
-        <!-- Slide de banners da home -->
-        <div class="carousel-item active" style="background-image: url('img/banner.jpg')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="course.html"> Courses </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="event.html"> Events </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+            </ul>
+            
           </div>
-        </div>
-
-        <!-- Slide de banners da home -->
-        <div class="carousel-item" style="background-image: url('img/867537.jpg')">
-          <div class="carousel-caption d-none d-md-block">
-          </div>
-        </div>
-
-         <!-- Slide de banners da home -->
-        <div class="carousel-item " style="background-image: url('img/banner.jpg')">
-          <div class="carousel-caption d-none d-md-block">
-          </div>
-        </div>
-       
+        </nav>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        E D U C A T I O N
+                      </h1>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        E D U C A T I O N
+                      </h1>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h1>
+                        E D U C A T I O N
+                      </h1>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </header>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <h1 class="my-4">Noticias: </h1>
-
-    <!-- Marketing Icons Section >
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!- /.row -->
-
-    <!-- Portfolio Section 
-    <h2>Portfolio Heading</h2>-->
-
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project One</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Six</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-      </div>
-    </div>
-
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <!-- /.container -->
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container my-auto">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    <!-- end slider section -->
+  </div>
+
+  <!-- special section -->
+
+  <section class="special_section">
+    <div class="container">
+      <div class="special_container">
+        <div class="box b1">
+          <div class="img-box">
+            <img src="images/award.png" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              BEST <br />
+              INDUSTRY LEADERS
+            </h4>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="box b2">
+          <div class="img-box">
+            <img src="images/study.png" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              LEARN <br />
+              COURSES ONLINE
+            </h4>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="box b3">
+          <div class="img-box">
+            <img src="images/books-stack-of-three.png" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              BEST <br />
+              LIBRARY & STORE
+            </h4>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- /.container -->
+  </section>
+
+  <!-- end special section -->
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="side_img">
+      <img src="images/side-img.png" alt="" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="images/a-1.jpg" alt="" />
+            </div>
+            <div class="img-box b2">
+              <img src="images/a-2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h3>
+                About Our College
+              </h3>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more it
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- course section -->
+
+  <section class="course_section layout_padding-bottom">
+    <div class="side_img">
+      <img src="images/side-img.png" alt="" />
+    </div>
+    <div class="container">
+      <div class="heading_container">
+        <h3>
+          POPULAR COURSES
+        </h3>
+        <p>
+          It is a long established fact that a reader will be distracted
+        </p>
+      </div>
+      <div class="course_container">
+        <div class="course_content">
+          <div class="box">
+            <img src="images/c-1.jpg" alt="" />
+            <a href="" class="">
+              <img src="images/link.png" alt="" />
+            </a>
+            <h5>
+              LMS <br />
+              Content
+            </h5>
+          </div>
+          <div class="box">
+            <img src="images/c-2.jpg" alt="" />
+            <a href="" class="">
+              <img src="images/link.png" alt="" />
+            </a>
+            <h5>
+              From <br />
+              Zero to Hero
+            </h5>
+          </div>
+        </div>
+        <div class="course_content">
+          <div class="box">
+            <img src="images/c-3.jpg" alt="" />
+            <a href="" class="">
+              <img src="images/link.png" alt="" />
+            </a>
+            <h5>
+              Learn <br />
+              Python – Interactive
+            </h5>
+          </div>
+          <div class="box">
+            <img src="images/c-4.jpg" alt="" />
+            <a href="" class="">
+              <img src="images/link.png" alt="" />
+            </a>
+            <h5>
+              Your <br />
+              Complete Guide
+            </h5>
+          </div>
+          <div class="box">
+            <img src="images/c-5.jpg" alt="" />
+            <a href="" class="">
+              <img src="images/link.png" alt="" />
+            </a>
+            <h5>
+              Photography
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end course section -->
+
+  <!-- login section -->
+
+  <section class="login_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              GET ONLINE COURSES FOR FREE
+            </h3>
+            <p>
+              Create your free account now and get immediate access to 100s of
+              online courses
+            </p>
+            <a href="">
+              REGISTER NOW
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="login_form">
+            <h5>
+              Login Now
+            </h5>
+            <form action="">
+              <div>
+                <input type="email" placeholder="Email " />
+              </div>
+              <div>
+                <input type="password" placeholder="Password" />
+              </div>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end login section -->
+
+  <!-- event section -->
+  <section class="event_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h3>
+          Events
+        </h3>
+        <p>
+          Upcoming Education Events to feed your brain.
+        </p>
+      </div>
+      <div class="event_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/event-img.jpg" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              Education Events 2021
+            </h4>
+            <h6>
+              8:00 AM - 5:00 PM VENICE, ITALY
+            </h6>
+          </div>
+          <div class="date-box">
+            <h3>
+              <span>
+                15
+              </span>
+              March
+            </h3>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/event-img.jpg" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              Education Events 2021
+            </h4>
+            <h6>
+              8:00 AM - 5:00 PM VENICE, ITALY
+            </h6>
+          </div>
+          <div class="date-box">
+            <h3>
+              <span>
+                15
+              </span>
+              February
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end event section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h3>
+          What People Say
+        </h3>
+        <p>
+          It is a long established fact that a reader will be distracted
+        </p>
+      </div>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client.png" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Distracted by
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout. The point of using Lorem Ipsum is that it has a
+                  more-or-less normal distribution of letters
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client.png" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Distracted by
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout. The point of using Lorem Ipsum is that it has a
+                  more-or-less normal distribution of letters
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client.png" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Distracted by
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be
+                  distracted by the readable content of a page when looking at
+                  its layout. The point of using Lorem Ipsum is that it has a
+                  more-or-less normal distribution of letters
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h3>
+                Contact Us
+              </h3>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="contact-form">
+            <h5>
+              Get In Touch
+            </h5>
+            <form action="">
+              <div>
+                <input type="text" placeholder="Full Name " />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email Address" />
+              </div>
+              <div>
+                <input type="text" placeholder="Message" class="input_message" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn_on-hover">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_menu">
+            <h5>
+              QUICK LINKS
+            </h5>
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="course.html"> Courses </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="event.html"> Events </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_course">
+            <h5>
+              TOP RATED COURSE
+            </h5>
+            <p>
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humou
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-5 offset-md-1">
+          <div class="info_news">
+            <h5>
+              FOR ANY QUERY, PLEASE WRITE TO US
+            </h5>
+            <div class="info_contact">
+              <a href="">
+                Location
+              </a>
+              <a href="">
+                demo@gmail.com
+              </a>
+              <a href="">
+                Call : +01 1234567890
+              </a>
+            </div>
+            <form action="">
+              <input type="text" placeholder="Enter Your email" />
+              <button>
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      &copy; 2021 All Rights Reserved By
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   
+  <footer class="container-fluid footer_section">
+  
+      <p>
+        Distributed By 
+        <a href="https://themewagon.com/">Themewagon</a>
+      </p>
+  
+  </footer>
+ 
+  <!-- footer section -->
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </body>
-<br>
 
 </html>
